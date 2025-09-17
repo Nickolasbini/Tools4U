@@ -44,7 +44,7 @@ Essa landing page foi desenvolvida em uma **playlist exclusiva no canal [Código
 
 - Vídeo 5: **[Seção Serviços: Criando Cards Responsivos](https://youtu.be/XXXXXXXXXXX)**  
 
-- Vídeo 6: Seção Depoimentos: Estilo de Prova Social  
+- Vídeo 6: **[Seção Depoimentos: Estilo de Prova Social](https://youtu.be/QXNuDPh1Yq8)**  
 
 - Vídeo 7: Seção Chamada para Ação: CTA que Converte  
 
