@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tools4U</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="bg-white shadow fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-6xl mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-chain">Tools4U</h1>
+            <nav class="hidden md:flex gap-6">
+                <a href="#home" class="hover:text-chain transition">Início</a>
+                <a href="#about" class="hover:text-chain transition">Sobre</a>
+                <a href="#services" class="hover:text-chain transition">Serviços</a>
+                <a href="#contact" class="hover:text-chain transition">Contato</a>
+            </nav>
+            <button class="md:hidden p-2" onclick="toggleSmallMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>            
+        </div>
+
+        <div id="small-menu" class="w-full flex flex-col gap-4 bg-white shadow-lg p-4 absolute border-t border-silver hidden">
+            <a href="#home" class="mr-auto ml-2 text-md py-2 rounded">Início</a>
+            <a href="#about" class="mr-auto ml-2 text-md py-2 rounded">Sobre</a>
+            <a href="#services" class="mr-auto ml-2 text-md py-2 rounded">Serviços</a>
+            <a href="#contact" class="mr-auto ml-2 text-md py-2 rounded">Contato</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="bg-chain text-white pt-28">
+        <div class="max-w-6xl mx-auto px-4 py-20 text-center">
+            <h2 class="text-4xl font-bold mb-4">
+                Crie Sites Rápidos e Responsivos
+            </h2>
+            <p class="mb-6 text-lg">
+                Usando o Tailwind CSS, você contrói interfaces bonitas e modernas sem complicação.
+            </p>
+            <a href="#contact" class="bg-white text-chain px-6 py-3 rounded font-semibold hover:bg-gray-100 transition">
+                Começar Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="about" class="bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4 py-20 text-center flex items-center flex-col md:flex-row">
+            <div class="w-full md:w-1/2 lg:w-1/2 px-4 mb-10 lg:mb-0">
+                <img src="image/hero.jpg" class="rounded-lg">
+            </div>
+            <div class="w-full md:w-1/2 lg:w-1/2 px-4 text-left items-center">
+                <h2 class="text-2xl">Sobre Nós</h2>
+                <p class="my-3">
+                    Somos apaixonados por tecnologia e criamos soluções modernas e eficientes para que qualquer 
+                    pessoa consiga ter sua presença digital de forma simples.
+                </p>
+                <p>
+                    Nosso foco é ensinar programação de forma prática, ajudando 
+                    iniciantes a criarem seus primeiros projetos com confiança.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="services" class="">
+        <div class="max-w-6xl mx-auto px-4 py-20 text-center">
+            <h3 class="text-2xl mb-8">
+                Nossos Serviços
+            </h3>
+            <div class="flex flex-col md:flex-row gap-6 md:gap-2 lg:gap-6">
+                <div class="card border border-gray-200 rounded-lg py-5 px-2 shadow">
+                    <p class="font-semibold text-lg mb-2 flex justify-center w-full gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffc83d" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffc83d" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                        </svg>
+                        Sites Rápidos
+                    </p>
+                    <p class="px-3 mx-auto">
+                        Criamos páginas otimizadas que carregam em segundos.
+                    </p>
+                </div>
+
+                <div class="card border border-gray-200 rounded-lg py-5 px-2 shadow">
+                    <p class="font-semibold text-lg mb-2 flex justify-center w-full gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                        </svg>
+                        Responsividade
+                    </p>
+                    <p class="px-3 mx-auto">
+                        Design que funciona em qualquer dispositivo, do celular ao desktop.
+                    </p>
+                </div>
+
+                <div class="card border border-gray-200 rounded-lg py-5 px-2 shadow">
+                    <p class="font-semibold text-lg mb-2 flex justify-center w-full gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
+                        </svg>
+                        Personalização
+                    </p>
+                    <p class="px-3 mx-auto">
+                        Adapte cores, fontes e estilos conforme a identidade da sua marca.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTEMUNHOS -->
+     <section id="testimonies" class="bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4 py-20 text-center">
+            <h3 class="text-2xl mb-8">
+                O que dizem nossos clientes
+            </h3>
+            <div class="flex flex-col md:flex-row gap-6 md:gap-2 lg:gap-6" id="testimonies-wrapper"></div>
+        </div>
+    </section>
+
+    <!-- CHAMADA AÇÃO -->
+
+    <!-- CONTATO -->
+
+    <!-- FOOTER -->
+
+</body>
+
+<script>
+
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    chain: '#2A3340',
+                    silver: '#5A758C',
+                    white: '#fff'
+                },
+                fontFamily: {
+                    sans: ['sans-serif'],
+                    poppins: ['Poppins']
+                }
+            }
+        }
+    }
+
+    function toggleSmallMenu() {
+        const element = document.getElementById('small-menu');
+        element.classList.toggle('hidden');
+    }
+
+    function generateTestimonies() {
+        let cardTemplate = `<div class="card bg-white border border-gray-200 rounded-lg py-5 px-2 w-full md:w-1/3 text-left px-3 shadow">
+            <p class="italic text-sm mb-4">
+                "{review}"
+            </p>
+            <p class="mx-auto text-lg font-bold mt-auto">
+                — {name}
+            </p>
+        </div>`;
+
+        const elWrapper = document.getElementById('testimonies-wrapper');
+
+        const testimoniesArray = [
+            {name: 'Ana Souza', review: 'Consegui criar meu primeiro site em menos de um dia. Tailwind é incrível!'},
+            {name: 'João Pereira', review: 'Explicação simples e direta. Agora me sinto confiante para montar meus projetos.'},
+            {name: 'Maria Oliveira', review: 'Recomendo a todos que estão começando. É muito mais fácil do que eu imaginava.'},
+        ];
+
+        let testimoniesHtml = '';
+
+        for (let testimonyObj of testimoniesArray) {
+            let myCardTemplate = cardTemplate;
+
+            myCardTemplate = myCardTemplate.replace('{review}', testimonyObj.review);
+            myCardTemplate = myCardTemplate.replace('{name}', testimonyObj.name);
+
+            testimoniesHtml += myCardTemplate;
+        }
+
+        elWrapper.innerHTML = testimoniesHtml;
+    }
+
+    // var - acessível em todo lugar
+    // let - acessível em todo lugar
+    // const - não é acessível em todo lugar e não pode ser alterado
+
+    // string - texto
+    // int - numero inteiro
+    // float - numero
+    // array - lista
+
+    generateTestimonies();
+
+</script>
