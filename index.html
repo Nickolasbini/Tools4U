@@ -8,6 +8,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -129,7 +130,7 @@
     </section>
 
     <!-- CHAMADA AÇÃO -->
-     <section id="cta" class="pt-28 pb-28 mb-20">
+    <section id="cta" class="pt-28 pb-28 mb-18">
         <div class="max-w-6xl mx-auto px-4 py-20 text-center">
             <h2 class="text-4xl font-extrabold mb-4 text-chain leading-tight">
                 Para de sonhar, comece a codar.
@@ -140,7 +141,7 @@
             <a 
                 href="#contact" 
                 class="
-                    bg-chain text-white px-10 py-4 rounded font-bold 
+                    bg-chain text-white px-10 py-4 rounded font-bold
                     uppercase tracking-wider shadow-lg hover:bg-gray-800
                 "
             >
@@ -150,13 +151,39 @@
     </section>
 
     <!-- CONTATO -->
+    <section id="contato" class="bg-gray-100">
+        <div class="max-w-3xl mx-auto px-4 py-16">
+            <h3 class="text-2xl font-bold text-center mb-6">
+                Entre em contato
+            </h3>
+            <form 
+                id="contact-form" 
+                class="bg-white shadow-md rounded-lg p-6 space-y-4 py-8 flex flex-col gap-6"
+            >
+                <input type="text" placeholder="Seu nome" class="w-full border rounded px-3 py-2">
+                <input type="email" placeholder="Seu email" class="w-full border rounded px-3 py-2">
+                <textarea placeholder="Sua mensagem" value="" rows="4" class="w-full border rounded px-3 py-2">
+                    </textarea>
+                <button 
+                    id="submitButton"
+                    type="submit" 
+                    class="bg-chain text-white px-6 py-3 rounded font-semibold hover:bg-gray-800 w-full transition"
+                >
+                    Enviar Mensagem
+                </button>
+
+                <p id="feedbackMessage" class="text-2xl hidden text-gray-500 font-semibold rounded py-4 px-2">
+                    Email enviado
+                </p>
+            </form>
+        </div>
+    </section>
 
     <!-- FOOTER -->
 
 </body>
 
 <script>
-
     tailwind.config = {
         theme: {
             extend: {
@@ -220,5 +247,44 @@
     // array - lista
 
     generateTestimonies();
+
+
+    emailjs.init({
+        publicKey: "PUBLIC_KEY",
+    });
+
+    window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', this)
+                .then(() => {
+                    setFeedbackMessage('Email enviado com sucesso. Em breve entraremos em contato!');
+                    console.log('SUCCESS!');
+                }, (error) => {
+                    setFeedbackMessage('Email não enviado com sucesso. Por favor, tente novamente mais tarde!', false);
+                    console.log('FAILED...', error);
+                });
+        });
+    }
+
+    function setFeedbackMessage(message = '', success = true) {
+        const element = document.getElementById('feedbackMessage');
+        if (element) {
+            element.classList.remove('hidden');
+            element.innerText = message;
+
+            if (success) {
+                element.classList.remove('bg-red-200');
+                element.classList.add('bg-green-200');
+            } else {
+                element.classList.remove('bg-green-200');
+                element.classList.add('bg-red-200');
+            }
+
+            const interval = setInterval(() => {
+                element.classList.add('hidden');
+            }, 5000);
+        }
+    }
 
 </script>
